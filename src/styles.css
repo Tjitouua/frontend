@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  :root {
+    /* Primary Colors */
+    --color-primary: #0055E6;
+    --color-primary-dark: #0D2244;
+    --color-primary-light: #E6F0FF;
+
+    /* Secondary Colors */
+    --color-secondary: #F7F8FA;
+    --color-secondary-card: #FFFFFF;
+    --color-secondary-border: #E5E7EB;
+    --color-secondary-hover: #F0F4F9;
+
+    /* Text Colors */
+    --color-text-default: #4A5568;
+    --color-text-heading: #1A202C;
+    --color-text-muted: #718096;
+    --color-text-link: #0055E6;
+  }
+
+  /* Global focus style for accessibility */
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+}
