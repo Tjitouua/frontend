@@ -14,23 +14,25 @@ import {
   ChevronRight,
   Accessibility,
   Users,
-  UserMinus
+  UserMinus,
+  Briefcase
 } from 'lucide-react';
 import SectionContainer from './SectionContainer';
 import { useNavigate } from 'react-router-dom';
 
 const governmentServices = [
-  { icon: Users, title: 'Marriage', link: '/service/marriage' },
-  { icon: UserMinus, title: 'Divorce', link: '/service/divorce' },
+  { icon: Briefcase, title: 'Job application', link: '/service/jobs' },
   { icon: Shield, title: 'Military Recruit', link: '/service/defence' },
   { icon: MapPin, title: 'Residence', link: '/service/settling' },
   { icon: Baby, title: 'Birth', link: '/service/baby' },
   { icon: Stethoscope, title: 'Health', link: '/service/child-health' },
   { icon: Accessibility, title: 'Disability/Pension', link: '/services/disability-pension' },
-  { icon: Flower2, title: 'Death', link: '/service/bereavement' },
-  { icon: HandHelping, title: 'Volunteer Job', link: '/service/volunteer' },
-  { icon: PenLine, title: 'Name change', link: '/service/name-change' },
   { icon: Rocket, title: 'Business', link: '/service/business-start' },
+  { icon: HandHelping, title: 'Volunteer Job', link: '/service/volunteer' },
+  { icon: Flower2, title: 'Death', link: '/service/bereavement' },
+  { icon: PenLine, title: 'Name change', link: '/service/name-change' },
+  { icon: Users, title: 'Marriage', link: '/service/marriage' },
+  { icon: UserMinus, title: 'Divorce', link: '/service/divorce' },
 ];
 
 const GovernmentServicesSection: React.FC = () => {

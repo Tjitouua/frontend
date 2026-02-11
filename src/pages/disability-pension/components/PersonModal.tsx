@@ -105,7 +105,7 @@ const PersonModal: React.FC<PersonModalProps> = ({
                     <label className={labelClasses}>First Name <span className="text-red-500">*</span></label>
                     <input 
                       type="text" 
-                      placeholder="e.g. Samuel"
+                      placeholder="e.g. John"
                       value={modalForm.firstName}
                       onChange={(e) => setModalForm(prev => ({ ...prev, firstName: e.target.value }))}
                       className={inputClasses}
@@ -115,7 +115,7 @@ const PersonModal: React.FC<PersonModalProps> = ({
                     <label className={labelClasses}>Last Name <span className="text-red-500">*</span></label>
                     <input 
                       type="text" 
-                      placeholder="e.g. Simbili"
+                      placeholder="e.g. Doe"
                       value={modalForm.lastName}
                       onChange={(e) => setModalForm(prev => ({ ...prev, lastName: e.target.value }))}
                       className={inputClasses}
@@ -137,7 +137,7 @@ const PersonModal: React.FC<PersonModalProps> = ({
                     <label className={labelClasses}>Initials <span className="text-red-500">*</span></label>
                     <input 
                       type="text" 
-                      placeholder="e.g. S.S"
+                      placeholder="e.g. J.D"
                       value={modalForm.initials}
                       onChange={(e) => setModalForm(prev => ({ ...prev, initials: e.target.value }))}
                       className={inputClasses}

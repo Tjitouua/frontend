@@ -16,7 +16,16 @@ import {
   HeartHandshake,
   ScrollText,
   Users,
-  ArrowRight
+  ArrowRight,
+  ShieldCheck,
+  ShoppingCart,
+  CheckCircle,
+  Scale,
+  Landmark,
+  FileBadge,
+  Accessibility,
+  Baby,
+  GraduationCap
 } from 'lucide-react';
 import ServiceCard from './ServiceCard';
 import { ServiceItem } from '../types/services';
@@ -24,23 +33,24 @@ import Button from './Button';
 import { Link } from 'react-router-dom';
 
 const citizenServices: ServiceItem[] = [
-  { icon: Pill, title: 'My prescriptions', link: '/service/prescriptions' },
-  { icon: FileClock, title: 'Certificate of temporary incapacity for work', link: '/service/incapacity' },
-  { icon: CreditCard, title: 'My identity documents', link: '/service/identity' },
-  { icon: Globe, title: 'Ordering the African health insurance card', link: '/service/ehic' },
-  { icon: UserCog, title: 'Account number and personal data', link: '/service/personal-data' },
-  { icon: Smile, title: 'Dental care benefit', link: '/service/dental' },
-  { icon: Car, title: 'Traffic insurance history', link: '/service/traffic' },
+  { icon: CreditCard, title: 'Identity Documents & Passports', link: '/service/identity' },
+  { icon: Car, title: 'NaTIS License Renewal', link: '/service/natis' },
+  { icon: Landmark, title: 'Tax Self-Service (NamRA ITAS)', link: '/service/tax' },
+  { icon: Accessibility, title: 'Social Grants (Pension/Disability)', link: '/services/disability-pension' },
+  { icon: ShieldCheck, title: 'Police Conduct Certificate', link: '/service/police-conduct' },
+  { icon: Baby, title: 'Birth & Death Registration', link: '/service/certificates' },
+  { icon: GraduationCap, title: 'Student Funding (NSFAF)', link: '/service/nsfaf' },
 ];
 
 const entrepreneurServices: ServiceItem[] = [
-  { icon: LayoutDashboard, title: "Entrepreneur's Dashboard", link: '/entrepreneur/dashboard' },
-  { icon: FileCheck, title: 'Authorisations', link: '/entrepreneur/authorisations' },
-  { icon: Mail, title: 'Mailbox', link: '/entrepreneur/mailbox' },
-  { icon: Coins, title: 'Vacation pay and average wages', link: '/entrepreneur/wages' },
-  { icon: HeartHandshake, title: 'Health insurance of employees', link: '/entrepreneur/health-insurance' },
-  { icon: ScrollText, title: 'Notarised documents', link: '/entrepreneur/notary' },
-  { icon: Users, title: 'Population Register queries', link: '/entrepreneur/population' },
+  { icon: FileBadge, title: 'Business Registration', link: '/entrepreneur/registration' },
+  { icon: ShieldCheck, title: 'Intellectual Property', link: '/entrepreneur/intellectual-property' },
+  { icon: ShoppingCart, title: 'Procurement', link: '/entrepreneur/procurement' },
+  { icon: FileCheck, title: 'Compliance', link: '/entrepreneur/compliance' },
+  { icon: ScrollText, title: 'Waiver', link: '/entrepreneur/waiver' },
+  { icon: CheckCircle, title: 'Good Standing', link: '/entrepreneur/good-standing' },
+  { icon: Scale, title: 'Law Reform', link: '/entrepreneur/law-reform' },
+  { icon: Landmark, title: 'Taxes', link: '/entrepreneur/taxes' },
 ];
 
 const EServicesSection: React.FC = () => {

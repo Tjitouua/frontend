@@ -20,6 +20,7 @@ import { STEPS, STORAGE_KEY } from './disability-pension/constants';
 import Card from './disability-pension/components/Card';
 import StepIndicator from './disability-pension/components/StepIndicator';
 import PersonModal from './disability-pension/components/PersonModal';
+import GrantModal from './disability-pension/components/GrantModal';
 
 // Step Components
 import StartingStep from './disability-pension/components/steps/StartingStep';
@@ -39,6 +40,11 @@ const DisabilityPensionPage: React.FC = () => {
   const [isPersonModalOpen, setIsPersonModalOpen] = useState(false);
   const [personModalType, setPersonModalType] = useState<'Applicant' | 'Procurator' | null>(null);
   const [isSearching, setIsSearching] = useState(false);
+
+  // Grant Modal State
+  const [isGrantModalOpen, setIsGrantModalOpen] = useState(false);
+  const [grantModalType, setGrantModalType] = useState<'Permanent' | 'Temporary' | null>(null);
+  const [isSavingGrant, setIsSavingGrant] = useState(false);
 
   // Persons List State
   const [persons, setPersons] = useState<Person[]>([]);
@@ -71,6 +77,8 @@ const DisabilityPensionPage: React.FC = () => {
     lastName: '',
     idNumber: '',
     grantType: '',
+    grantCode: '',
+    grantDuration: 0,
     bankName: '',
     accountNumber: ''
   });
@@ -92,8 +100,12 @@ const DisabilityPensionPage: React.FC = () => {
     }
   }, [formData, isLoading]);
 
-  const updateField = (field: keyof FormData, value: string) => {
+  const updateField = (field: keyof FormData, value: any) => {
     setFormData(prev => ({ ...prev, [field]: value }));
+  };
+
+  const updateFormData = (data: Partial<FormData>) => {
+    setFormData(prev => ({ ...prev, ...data }));
   };
 
   const handleNext = () => {
@@ -119,6 +131,24 @@ const DisabilityPensionPage: React.FC = () => {
   const openPersonModal = (type: 'Applicant' | 'Procurator') => {
     setPersonModalType(type);
     setIsPersonModalOpen(true);
+  };
+
+  const openGrantModal = (type: 'Permanent' | 'Temporary') => {
+    setGrantModalType(type);
+    setIsGrantModalOpen(true);
+  };
+
+  const handleSaveGrant = (type: 'Permanent' | 'Temporary', duration: number) => {
+    setIsSavingGrant(true);
+    setTimeout(() => {
+      updateFormData({
+        grantType: type,
+        grantCode: type === 'Permanent' ? '22' : '05',
+        grantDuration: type === 'Permanent' ? undefined : duration
+      });
+      setIsSavingGrant(false);
+      setIsGrantModalOpen(false);
+    }, 500);
   };
 
   const handleSavePerson = () => {
@@ -188,7 +218,14 @@ const DisabilityPensionPage: React.FC = () => {
           />
         );
       case 'grant':
-        return <GrantStep formData={formData} />;
+        return (
+          <GrantStep 
+            formData={formData} 
+            persons={persons} 
+            onUpdateFormData={updateFormData} 
+            onOpenModal={openGrantModal}
+          />
+        );
       case 'payment':
         return <PaymentStep formData={formData} onUpdateField={updateField} />;
       case 'documents':
@@ -225,6 +262,15 @@ const DisabilityPensionPage: React.FC = () => {
         setModalForm={setModalForm}
         onSave={handleSavePerson}
         isSaving={isSearching}
+      />
+
+      <GrantModal 
+        isOpen={isGrantModalOpen}
+        onClose={() => setIsGrantModalOpen(false)}
+        type={grantModalType}
+        initialDuration={formData.grantDuration || 0}
+        onSave={handleSaveGrant}
+        isSaving={isSavingGrant}
       />
 
       <div className="container mx-auto px-4 lg:px-8 pt-8">
@@ -292,7 +338,7 @@ const DisabilityPensionPage: React.FC = () => {
                   <button 
                     onClick={handlePrev}
                     disabled={currentStepIndex === 0}
-                    className={`flex items-center gap-2 px-6 py-3 rounded-full font-semibold transition-all
+                    className={`flex items-center gap-2 px-6 py-3 rounded-full font-bold transition-all
                       ${currentStepIndex === 0 
                         ? 'opacity-0 pointer-events-none' 
                         : 'text-gray-600 hover:bg-white hover:shadow-md'
@@ -309,7 +355,7 @@ const DisabilityPensionPage: React.FC = () => {
                         // In real app, submit here
                         setTimeout(() => navigate('/'), 2000);
                       }}
-                      className="flex items-center gap-2 px-8 py-3 bg-green-600 hover:bg-green-700 text-white rounded-full font-bold shadow-lg hover:shadow-green-200 hover:-translate-y-0.5 transition-all"
+                      className="flex items-center gap-2 px-6 py-3 bg-green-600 hover:bg-green-700 text-white rounded-full font-bold shadow-lg hover:shadow-green-200 hover:-translate-y-0.5 transition-all"
                     >
                       Submit Application
                       <Send size={18} />
@@ -317,7 +363,7 @@ const DisabilityPensionPage: React.FC = () => {
                   ) : (
                     <button 
                       onClick={handleNext}
-                      className="flex items-center gap-2 px-8 py-3 bg-primary hover:bg-primary-dark text-white rounded-full font-bold shadow-lg hover:shadow-blue-200 hover:-translate-y-0.5 transition-all"
+                      className="flex items-center gap-2 px-6 py-3 bg-primary hover:bg-primary-dark text-white rounded-full font-bold shadow-lg hover:shadow-blue-200 hover:-translate-y-0.5 transition-all"
                     >
                       Next Step
                       <ArrowRight size={18} />

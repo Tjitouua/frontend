@@ -12,7 +12,9 @@ export interface FormData {
   firstName: string;
   lastName: string;
   idNumber: string;
-  grantType: string;
+  grantType: 'Permanent' | 'Temporary' | '';
+  grantCode: string;
+  grantDuration?: number;
   bankName: string;
   accountNumber: string;
 }

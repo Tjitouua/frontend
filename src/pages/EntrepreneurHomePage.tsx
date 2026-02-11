@@ -103,12 +103,14 @@ const EntrepreneurHomePage: React.FC = () => {
 
   // E-Services Data
   const eServices: EServiceCard[] = [
-    { title: "Entrepreneur's dashboard", icon: LayoutDashboard, link: '/entrepreneur/dashboard' },
-    { title: "Authorisations", icon: ShieldCheck, link: '/entrepreneur/authorisations' },
-    { title: "Mailbox", icon: Mail, link: '/entrepreneur/mailbox' },
-    { title: "Management of certificates of incapacity for work", icon: FileText, link: '/entrepreneur/incapacity-certificates' },
-    { title: "Vacation pay and average wages compensation", icon: Calculator, link: '/entrepreneur/wages' },
-    { title: "Notarised documents", icon: FileCheck, link: '/entrepreneur/notary' }
+    { title: "Business Registration", icon: FileBadge, link: '/entrepreneur/registration' },
+    { title: "Intellectual Property", icon: ShieldCheck, link: '/entrepreneur/intellectual-property' },
+    { title: "Procurement", icon: Coins, link: '/entrepreneur/procurement' },
+    { title: "Compliance", icon: FileCheck, link: '/entrepreneur/compliance' },
+    { title: "Waiver", icon: FileText, link: '/entrepreneur/waiver' },
+    { title: "Good Standing", icon: ShieldCheck, link: '/entrepreneur/good-standing' },
+    { title: "Law Reform", icon: FileText, link: '/entrepreneur/law-reform' },
+    { title: "Taxes", icon: Coins, link: '/entrepreneur/taxes' }
   ];
 
   // Portals Data

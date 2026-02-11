@@ -10,38 +10,38 @@ interface PersonStepProps {
 
 const PersonStep: React.FC<PersonStepProps> = ({ onOpenModal, persons, onClearList }) => {
   return (
-    <div className="space-y-10 py-4 animate-in fade-in slide-in-from-bottom-4 duration-500">
+    <div className="space-y-8 py-4 animate-in fade-in slide-in-from-bottom-4 duration-500">
       {/* Enrollment Actions */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <button 
           onClick={() => onOpenModal('Applicant')}
-          className="group relative overflow-hidden p-8 rounded-lg bg-white border border-gray-200 shadow-sm hover:shadow-2xl hover:border-primary transition-all duration-500 text-left hover:-translate-y-1"
+          className="group relative overflow-hidden py-5 px-6 rounded-lg bg-white border border-gray-200 shadow-sm hover:shadow-2xl hover:border-primary transition-all duration-500 text-left hover:-translate-y-1 h-full flex flex-col"
         >
-          <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
-            <UserPlus size={120} className="text-primary" />
+          <div className="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-10 transition-opacity">
+            <UserPlus size={90} className="text-primary" />
           </div>
-          <div className="relative z-10">
-            <div className="w-16 h-16 bg-blue-50 rounded-lg flex items-center justify-center text-primary mb-6 group-hover:scale-110 group-hover:bg-primary group-hover:text-white transition-all shadow-sm">
-              <UserPlus size={32} />
+          <div className="relative z-10 flex flex-col h-full">
+            <div className="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center text-primary mb-3 group-hover:scale-110 group-hover:bg-primary group-hover:text-white transition-all shadow-sm">
+              <UserPlus size={20} />
             </div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-2 tracking-tight">Add Applicant</h3>
-            <p className="text-gray-500 text-sm leading-relaxed max-w-[220px]">Register the primary beneficiary for this grant application.</p>
+            <h3 className="text-lg font-bold text-gray-900 mb-1 tracking-tight">Add Applicant</h3>
+            <p className="text-gray-500 text-sm leading-relaxed max-w-[220px] flex-1">Register the primary beneficiary for this grant application.</p>
           </div>
         </button>
         
         <button 
           onClick={() => onOpenModal('Procurator')}
-          className="group relative overflow-hidden p-8 rounded-lg bg-white border border-gray-200 shadow-sm hover:shadow-2xl hover:border-orange-400 transition-all duration-500 text-left hover:-translate-y-1"
+          className="group relative overflow-hidden py-5 px-6 rounded-lg bg-white border border-gray-200 shadow-sm hover:shadow-2xl hover:border-orange-400 transition-all duration-500 text-left hover:-translate-y-1 h-full flex flex-col"
         >
-          <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity">
-            <Users size={120} className="text-orange-500" />
+          <div className="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-10 transition-opacity">
+            <Users size={90} className="text-orange-500" />
           </div>
-          <div className="relative z-10">
-            <div className="w-16 h-16 bg-orange-50 rounded-lg flex items-center justify-center text-orange-500 mb-6 group-hover:scale-110 group-hover:bg-orange-500 group-hover:text-white transition-all shadow-sm">
-              <Users size={32} />
+          <div className="relative z-10 flex flex-col h-full">
+            <div className="w-10 h-10 bg-orange-50 rounded-lg flex items-center justify-center text-orange-500 mb-3 group-hover:scale-110 group-hover:bg-orange-500 group-hover:text-white transition-all shadow-sm">
+              <Users size={20} />
             </div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-2 tracking-tight">Add Procurator</h3>
-            <p className="text-gray-500 text-sm leading-relaxed max-w-[220px]">Register a representative to act on behalf of the applicant.</p>
+            <h3 className="text-lg font-bold text-gray-900 mb-1 tracking-tight">Add Procurator</h3>
+            <p className="text-gray-500 text-sm leading-relaxed max-w-[220px] flex-1">Register a representative to act on behalf of the applicant.</p>
           </div>
         </button>
       </div>
