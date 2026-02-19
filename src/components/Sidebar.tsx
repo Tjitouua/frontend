@@ -44,12 +44,7 @@ const entrepreneurLinks: NavItem[] = [
     { label: 'Taxes', href: '/entrepreneur/taxes', children: [] },
 ];
 
-// --- Sub-components ---
-const NewBadge: FC = () => (
-  <span className="ml-auto bg-red-600 text-white text-[10px] font-bold px-1.5 py-0.5 rounded">
-    NEW
-  </span>
-);
+
 
 const CollapsibleMenu: FC<{ item: NavItem; isSubItem?: boolean }> = ({ item, isSubItem = false }) => {
   const [isOpen, setIsOpen] = useState(false);

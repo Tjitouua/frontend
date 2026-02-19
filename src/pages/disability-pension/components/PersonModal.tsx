@@ -1,7 +1,7 @@
-import React, { useState, useRef } from 'react';
+import React, { useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Calendar, Save, Loader2, ChevronDown } from 'lucide-react';
-import { ModalFormState, Person } from '../types';
+import { ModalFormState } from '../types';
 import { COUNTRIES } from '../../../constants/countries';
 import { LANGUAGES } from '../../../constants/languages';
 

@@ -1,6 +1,6 @@
 import { FC, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowUp, ChevronRight, Facebook, Youtube, Mail, Phone } from 'lucide-react';
+import { ArrowUp, ChevronRight, Facebook, Youtube, Mail } from 'lucide-react';
 import coatOfArms from '../assets/Coat_of_Arms.png';
 import auFlag from '../assets/african union.png';
 import namFlag from '../assets/namibia-waving-flag.png';

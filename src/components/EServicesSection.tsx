@@ -2,20 +2,10 @@ import React from 'react';
 import { 
   User, 
   Briefcase, 
-  Pill, 
-  FileClock, 
   CreditCard, 
-  Globe, 
-  UserCog, 
-  Smile, 
   Car,
-  LayoutDashboard,
   FileCheck,
-  Mail,
-  Coins,
-  HeartHandshake,
   ScrollText,
-  Users,
   ArrowRight,
   ShieldCheck,
   ShoppingCart,
@@ -29,7 +19,6 @@ import {
 } from 'lucide-react';
 import ServiceCard from './ServiceCard';
 import { ServiceItem } from '../types/services';
-import Button from './Button';
 import { Link } from 'react-router-dom';
 
 const citizenServices: ServiceItem[] = [
@@ -40,6 +29,7 @@ const citizenServices: ServiceItem[] = [
   { icon: ShieldCheck, title: 'Police Conduct Certificate', link: '/service/police-conduct' },
   { icon: Baby, title: 'Birth & Death Registration', link: '/service/certificates' },
   { icon: GraduationCap, title: 'Student Funding (NSFAF)', link: '/service/nsfaf' },
+  { icon: Briefcase, title: 'Job Application', link: '/job-application' },
 ];
 
 const entrepreneurServices: ServiceItem[] = [

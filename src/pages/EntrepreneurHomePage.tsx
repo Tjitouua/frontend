@@ -2,15 +2,11 @@ import React from 'react';
 import { 
   ArrowRight, 
   ExternalLink, 
-  LayoutDashboard, 
   ShieldCheck, 
-  Mail, 
   FileText, 
-  Calculator, 
   FileCheck,
   Info,
   Coins,
-  Users,
   FileBadge
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';

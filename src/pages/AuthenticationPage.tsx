@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { 
-  ChevronDown, 
   ArrowLeft, 
   Lock, 
   CreditCard, 
@@ -20,7 +19,6 @@ type AuthMethod = 'id-card' | 'mobile-id' | 'smart-id';
 const AuthenticationPage: React.FC = () => {
   const [activeTab, setActiveTab] = useState<AuthMethod>('id-card');
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
 
   // Form states for other methods
   const [mobileNumber, setMobileNumber] = useState('');
@@ -28,7 +26,6 @@ const AuthenticationPage: React.FC = () => {
 
   const handleAuth = (e: React.FormEvent) => {
     e.preventDefault();
-    setError(null);
 
     setIsLoading(true);
 

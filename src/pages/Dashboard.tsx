@@ -1,6 +1,4 @@
-import React from 'react';
 import { ArrowRight, MessageSquare, FileText, Bell } from 'lucide-react';
-import SectionContainer from '../components/SectionContainer';
 import Button from '../components/Button';
 
 export default function Dashboard() {

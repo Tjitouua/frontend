@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import Button from '../components/Button'
 
 export default function FormBuilder({ schema, onSubmit }:{
   schema: any,
   onSubmit: (data:any)=>void
 }){
-  const init = {}
+  const init: {[key: string]: any} = {}
   schema.fields.forEach((f:any)=> init[f.name] = f.default || '')
   const [data, setData] = useState(init)
 

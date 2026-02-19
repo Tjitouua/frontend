@@ -1,12 +1,9 @@
 import React from 'react';
 import { 
-  Heart, 
-  HeartOff, 
   Shield, 
   MapPin, 
   Baby, 
   Stethoscope, 
-  Coins, 
   Flower2, 
   HandHelping, 
   PenLine, 
@@ -21,7 +18,7 @@ import SectionContainer from './SectionContainer';
 import { useNavigate } from 'react-router-dom';
 
 const governmentServices = [
-  { icon: Briefcase, title: 'Job application', link: '/service/jobs' },
+  { icon: Briefcase, title: 'Job application', link: '/job-application' },
   { icon: Shield, title: 'Military Recruit', link: '/service/defence' },
   { icon: MapPin, title: 'Residence', link: '/service/settling' },
   { icon: Baby, title: 'Birth', link: '/service/baby' },

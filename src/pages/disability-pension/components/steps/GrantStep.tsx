@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { 
   ClipboardCheck, 
   Calendar, 
@@ -7,26 +7,17 @@ import {
   Clock,
   CheckCircle2,
   AlertCircle,
-  X,
-  FileText,
-  Save,
-  Loader2
 } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
 import { FormData, Person } from '../../types';
 
 interface GrantStepProps {
   formData: FormData;
   persons: Person[];
-  onUpdateFormData: (data: Partial<FormData>) => void;
   onOpenModal: (type: 'Permanent' | 'Temporary') => void;
 }
 
-const GrantStep: React.FC<GrantStepProps> = ({ formData, persons, onUpdateFormData, onOpenModal }) => {
+const GrantStep: React.FC<GrantStepProps> = ({ formData, persons, onOpenModal }) => {
   const applicant = persons.find(p => p.capacity === 'Applicant');
-
-  const inputClasses = "w-full px-4 py-2.5 text-sm rounded-md border border-gray-300 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all placeholder:text-gray-400 bg-white";
-  const labelClasses = "text-xs font-bold text-gray-600 mb-1.5 flex items-center gap-1";
 
   return (
     <div className="py-4 animate-in fade-in slide-in-from-bottom-4 duration-500 space-y-8">

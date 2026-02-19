@@ -1,13 +1,10 @@
 import React, { useState } from 'react';
+import { Outlet } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
 import Sidebar from './Sidebar';
 
-interface LayoutProps {
-  children: React.ReactNode;
-}
-
-const Layout: React.FC<LayoutProps> = ({ children }) => {
+const Layout: React.FC = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   return (
@@ -43,7 +40,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 
         {/* Main Content Area */}
         <main className="flex-1 w-full min-w-0">
-          {children}
+          <Outlet />
         </main>
       </div>
 
